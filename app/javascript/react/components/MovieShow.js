@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
-import Tile from "Tile";
-import SearchForm from "SearchForm";
+import React from "react";
+
 const MovieShow = (props) => {
 
 

@@ -6,6 +6,8 @@ import MovieShow from "./MovieShow";
 
 
 const App = () => {
+
+  return (
   <BrowserRouter>
   <Switch>
       <Route exact path="/" component={MovieIndex} />
@@ -13,7 +15,7 @@ const App = () => {
       <Route exact path="/movies/:id" component={MovieShow} />
   </Switch>
   </BrowserRouter>
-}
+  )}
 
 export default App
 
