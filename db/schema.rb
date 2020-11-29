@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_25_231713) do
+ActiveRecord::Schema.define(version: 2020_11_29_013102) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "movies", force: :cascade do |t|
+    t.string "title", null: false
+    t.integer "thumbs_up"
+    t.integer "thumbs_down"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
