@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Tile from "./Tile";
-import SearchForm from "./SearchForm"
+import SearchForm from "./SearchForm";
 
 
-const MovieIndex = () => {
+const MovieIndex = (props) => {
 
 
   return(<div className="index-page">
     <div className="search-bar">
-      <p>SearchBarTest</p>
+      <SearchForm />
     </div>
     <div className="movie-list">
-      <p>MovieListTest</p>
+      <Tile />
     </div>
 
   </div>

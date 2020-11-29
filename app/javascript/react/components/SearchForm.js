@@ -7,7 +7,7 @@ const SearchForm = (props) => {
 
   return (
     <div className="form">
-      <label>City
+      <label>If this is working you'll see it
             <input  type="text" placeholder="For ex Boston, MA" />
       </label>
     </div>
