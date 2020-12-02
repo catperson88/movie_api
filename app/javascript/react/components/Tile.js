@@ -4,7 +4,7 @@ const Tile = (props) => {
 
 
   return (<div className="tile">
-    <p>If this is displaying Tile is coming through</p>
+    {props.movieTitle}
   </div>
   )
 }
