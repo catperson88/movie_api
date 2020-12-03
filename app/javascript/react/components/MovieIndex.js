@@ -9,13 +9,15 @@ const MovieIndex = (props) => {
   //const [getMovieIdList, setMovieIdList] = useState([])
   const [getMovieDetails, setMovieDetails] = useState([]);
 
+  
   useEffect(()=> {
-    fetch("https://movies-tvshows-data-imdb.p.rapidapi.com/?imdb=tt2935510&type=get-movie-details", {
+    fetch("https://movie-database-imdb-alternative.p.rapidapi.com/?s=Avengers%20Endgame&page=1&r=json", {
       "method": "GET",
       "headers": {
         "x-rapidapi-key": "a897c00b4cmsh2c90dea9a968474p1d8497jsnd26f52cb9f4d",
-        "x-rapidapi-host": "movies-tvshows-data-imdb.p.rapidapi.com"
+        "x-rapidapi-host": "movie-database-imdb-alternative.p.rapidapi.com"
       }
+    
     }).then(response => {
       if (response.ok) {
         return response
@@ -24,23 +26,24 @@ const MovieIndex = (props) => {
         const error = new Error(errorMessage);
         throw (error);
       }
-    }).then(response => response.json())
+    }).then(response => response.json()) 
       .then(body => {
-        debugger
-        setMovieDetails([body]);
+        setMovieDetails(body.Search)
       })
       .catch(err => {
         console.error(err);
-      })}, [])
+      }, [])}) 
       
-
-
+  
     const movieTiles = getMovieDetails.map((movie) => {
       return(<Tile 
-      movieTitle={movie.title}
-      details={movie} />)
+      key={movie.imdbID}
+      movieTitle={movie.Title}
+      //year={movie.year}
+      />)
     })
-  
+
+
   return(<div className="index-page">
     <div className="totally-superflous">
       <p>Hi, I'm filler text</p>
@@ -54,6 +57,8 @@ const MovieIndex = (props) => {
     </div>
 
   </div>
-  )
-} 
+  ) } 
+
+  
+ 
 export default MovieIndex
